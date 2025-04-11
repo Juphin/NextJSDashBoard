@@ -1,0 +1,17 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 18
+    commands:
+      - npm install
+  build:
+    commands:
+      - npm run build
+      - npm run export  # si `next export` est utilisé
+
+artifacts:
+  files:
+    - '**/*'
+  base-directory: out  # le dossier généré par `next export`
